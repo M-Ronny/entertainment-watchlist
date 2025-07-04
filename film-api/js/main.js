@@ -4,7 +4,7 @@ document.querySelector('button').addEventListener('click', getFetch)
 function getFetch(){
   const choice = document.querySelector('input').value
   console.log(choice)
-  const url = `https://imdb.iamidiotareyoutoo.com`
+  const url = ``
 
   fetch(url)
       .then(res => res.json()) // parse response as JSON
@@ -25,5 +25,4 @@ function getFetch(){
       });
 }
 
-// `https://api.nasa.gov/planetary/apod?api_key=iJy0Nd4wZZzfW2HFgBkNV4DDUsZ6PxL3RqQRgFfI&date=${choice}`
 
