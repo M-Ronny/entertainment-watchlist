@@ -4,7 +4,7 @@ document.querySelector('button').addEventListener('click', getFetch)
 function getFetch(){
   const choice = document.querySelector('input').value
   console.log(choice)
-  const url = ``
+  const url = `https://imdb.iamidiotareyoutoo.com/search?q=${choice}`
 
   fetch(url)
       .then(res => res.json()) // parse response as JSON
