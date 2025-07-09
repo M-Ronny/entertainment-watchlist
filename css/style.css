@@ -10,6 +10,12 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+.search {
+  height: 250px;
+  padding-left: 32%;
+  padding-top: 3%;
+}
+
 img{
   display: block;
   margin: 0 auto;
@@ -20,3 +26,20 @@ img{
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.search h1 {
+  font-size: 3em;
+}
+
+input {
+  width: 35%;
+  height: 25%;
+  font-size: 2em;
+  border-radius: 20px;
+}
+
+button {
+  height: 25%;
+  width: 15%;
+  font-size: 2em;
+  border-radius: 20px;
+}
