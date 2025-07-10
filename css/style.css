@@ -17,12 +17,13 @@
 }
 
 .result {
-  padding-left: 10%;
-  height: 500px;
+  padding-left: 25%;
+  height: 2500px;
 }
 
 .minSection {
   height: 300px;
+  margin: 5% 0;
 }
 
 div {
@@ -31,7 +32,7 @@ div {
 
 img{
   display: block;
-  width: 15%;
+  width: 29%;
 }
 
 
@@ -58,5 +59,5 @@ button {
 
 div {
   float: left;
-  width: 55.55%;
+  width: 49.99%;
 }
