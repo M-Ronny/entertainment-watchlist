@@ -18,7 +18,6 @@
 
 .result {
   padding-left: 25%;
-  height: 2500px;
 }
 
 .minSection {
@@ -60,4 +59,11 @@ button {
 div {
   float: left;
   width: 49.99%;
+}
+
+.watchlist {
+  height: 25%;
+  width: 30%;
+  font-size: 15px;
+  margin-top: 2%;
 }

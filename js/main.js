@@ -1,4 +1,3 @@
-//Example fetch using pokemonapi.co
 document.querySelector('button').addEventListener('click', getFetch)
 
 function getFetch(){
@@ -12,9 +11,12 @@ function getFetch(){
         console.log(data)
         document.querySelector('.result').textContent = ''
         for (let i = 0; i < data.description.length; i++) {
+          document.querySelector('.result').style.height = '2500px'
+
           const title = document.createElement('h1')
           const h3 = document.createElement('h3')
           const img = document.createElement('img')
+          const button = document.createElement('button')
           const section = document.createElement('section')
           const movieOrTV = document.createElement('div')
           const poster = document.createElement('div')
@@ -23,10 +25,13 @@ function getFetch(){
           section.classList.add('minSection')
           movieOrTV.classList.add('moiveOrTV')
           poster.classList.add('poster')
+          button.classList.add('watchlist')
 
           title.textContent = data.description[i]['#TITLE']
           h3.textContent = data.description[i]['#YEAR']
           img.src = data.description[i]['#IMG_POSTER']
+
+          button.textContent = 'Add to Watchlist'
 
           document.querySelector('.result').appendChild(section)
           section.appendChild(movieOrTV)
@@ -34,7 +39,15 @@ function getFetch(){
           movieOrTV.appendChild(title)
           movieOrTV.appendChild(h3)
           poster.appendChild(img)
+          poster.appendChild(button)
         }
+        
+        document.querySelectorAll('.watchlist').forEach(element => {
+        element.addEventListener('click', function() {
+            console.log('testing')
+        });
+    })
+
       })
       .catch(err => {
           console.log(`error ${err}`)
