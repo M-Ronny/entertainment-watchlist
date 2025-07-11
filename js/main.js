@@ -26,6 +26,7 @@ function getFetch(){
           movieOrTV.classList.add('moiveOrTV')
           poster.classList.add('poster')
           button.classList.add('watchlist')
+          button.classList.add(`${i}`)
 
           title.textContent = data.description[i]['#TITLE']
           h3.textContent = data.description[i]['#YEAR']
@@ -43,10 +44,12 @@ function getFetch(){
         }
         
         document.querySelectorAll('.watchlist').forEach(element => {
-        element.addEventListener('click', function() {
-            console.log('testing')
-        });
-    })
+        element.addEventListener('click', AddToWatchlist)
+        })
+
+        function AddToWatchlist() {
+    
+        }
 
       })
       .catch(err => {
