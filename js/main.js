@@ -1,3 +1,23 @@
+let storePoster = JSON.parse(localStorage.getItem('poster'))
+if (storePoster === null) {
+  storePoster = []
+}
+    
+localStorage.setItem('poster', JSON.stringify(storePoster))
+
+let storeTitle = JSON.parse(localStorage.getItem('title'))
+if (storeTitle === null) {
+  storeTitle = []
+}
+localStorage.setItem('title', JSON.stringify(storeTitle))
+
+let storeId = JSON.parse(localStorage.getItem('id'))
+if (storeId === null) {
+  storeId = []
+}
+localStorage.setItem('id', JSON.stringify(storeId))
+
+
 const goFetch = document.querySelector('button')
 
 if (goFetch) {
@@ -31,9 +51,12 @@ function getFetch(){
           movieOrTV.classList.add('moiveOrTV')
           poster.classList.add('poster')
           button.classList.add('watchlist')
+          button.classList.add(`add${i}`)
           remove.classList.add('watchlist')
           remove.classList.add('display')
+          remove.classList.add(`btn${i}`)
           button.value = `${i}`
+          remove.value = `${i}`
           //button.value = data.description[i]['#IMDB_ID']
           button.id = data.description[i]['#IMDB_ID']
 
@@ -53,6 +76,18 @@ function getFetch(){
           poster.appendChild(button)
           poster.appendChild(remove)
         }
+
+        const retrievedId = localStorage.getItem('id')
+        const arrayId = JSON.parse(retrievedId)
+
+        for (let c = 0; c < arrayId.length; c++) {
+          for (let d = 0; d < data.description.length; d++) {
+            if (data.description[d]['#IMDB_ID'] === arrayId[c]) {
+              document.querySelector(`.add${d}`).style.display = 'none'
+              document.querySelector(`.btn${d}`).style.display = 'block'
+            }
+          }
+        }
         
         const button = document.querySelectorAll('.watchlist')
 
@@ -68,28 +103,32 @@ function getFetch(){
           btn.style.display = 'none'
 
           if (this.value === value) {
-            if (!localStorage.getItem('poster')) {
-              localStorage.setItem('poster', data.description[value]['#IMG_POSTER'])
-            } else {
-              if (!data.description[value]['#IMG_POSTER']) {
-                let poster = localStorage.getItem('poster') + ' ' + 0
-                localStorage.setItem('poster', poster)
-              } else {
-                let poster = localStorage.getItem('poster') + ' ' + data.description[value]['#IMG_POSTER'] 
-                localStorage.setItem('poster', poster)
-              }
+            let storePoster = JSON.parse(localStorage.getItem('poster'))
+            if (storePoster === null) {
+              storePoster = []
             }
+            if (data.description[value]['#IMG_POSTER']) {
+              storePoster.push(data.description[value]['#IMG_POSTER'])
+            } else {
+              storePoster.push(0)
+            }
+            localStorage.setItem('poster', JSON.stringify(storePoster))
 
             let storeTitle = JSON.parse(localStorage.getItem('title'))
-
             if (storeTitle === null) {
               storeTitle = []
             }
-
             storeTitle.push(data.description[value]['#TITLE'])
             localStorage.setItem('title', JSON.stringify(storeTitle))
 
-            document.querySelector('.display').style.display = 'block'
+            let storeId = JSON.parse(localStorage.getItem('id'))
+            if (storeId === null) {
+              storeId = []
+            }
+            storeId.push(data.description[value]['#IMDB_ID'])
+            localStorage.setItem('id', JSON.stringify(storeId))
+
+            document.querySelector(`.btn${value}`).style.display = 'block'
           }
         }
         
@@ -100,7 +139,30 @@ function getFetch(){
         })
 
         function removeFromWatchlist() {
-          console.log('test')
+          const removeValue = event.target.value
+          const retrievedTitle = localStorage.getItem('title')
+          const arrayTitle = JSON.parse(retrievedTitle)
+          const retrievedPoster = localStorage.getItem('poster')
+          const arrayPoster = JSON.parse(retrievedPoster)
+          const retrievedId = localStorage.getItem('id')
+          const arrayId = JSON.parse(retrievedId)
+          const index = arrayTitle.indexOf(data.description[removeValue]['#TITLE'])
+
+          if (index > -1) {
+            arrayTitle.splice(index, 1)
+            arrayPoster.splice(index, 1)
+            arrayId.splice(index, 1)
+          }
+
+
+          localStorage.setItem('title', JSON.stringify(arrayTitle))
+          localStorage.setItem('poster', JSON.stringify(arrayPoster))
+          localStorage.setItem('id', JSON.stringify(arrayId))
+
+          document.querySelector(`.btn${removeValue}`).style.display = 'none'
+          document.querySelector(`.add${removeValue}`).style.display = 'block'
+          
+          console.log(index)
         }
 
       })
@@ -111,7 +173,10 @@ function getFetch(){
 
 const retrievedTitle = localStorage.getItem('title')
 const arrayTitle = JSON.parse(retrievedTitle)
-const arrayPoster = localStorage.poster.split(' ')
+const retrievedPoster = localStorage.getItem('poster')
+const arrayPoster = JSON.parse(retrievedPoster)
+const retrievedId = localStorage.getItem('id')
+const arrayId = JSON.parse(retrievedId)
 
 for (let b = 0; b < arrayPoster.length; b++) {
   const maindivs = document.createElement('div')
@@ -128,6 +193,7 @@ for (let b = 0; b < arrayPoster.length; b++) {
   watchlistPoster.classList.add('posters')
   watchlistPoster.src = arrayPoster[b] 
   removeButton.classList.add('removeFromWatchlist')
+  removeButton.value = `${b}`
 
   watchlistTitles.textContent = arrayTitle[b]
   removeButton.textContent = 'Remove From Watchlist'
@@ -141,6 +207,31 @@ for (let b = 0; b < arrayPoster.length; b++) {
   divTitle.appendChild(watchlistTitles)
   divPoster.appendChild(watchlistPoster)
   divPoster.appendChild(removeButton)
+}
+
+const removebtn = document.querySelectorAll('.removeFromWatchlist')
+
+removebtn.forEach(element => {
+  element.addEventListener('click', removeMovieOrTv)
+})
+
+function removeMovieOrTv() {
+  const targetvalue = event.target.value
+  const removeTitle = arrayTitle[targetvalue]
+  const index = arrayTitle.indexOf(removeTitle)
+
+  if (index > -1) {
+    arrayTitle.splice(index, 1)
+    arrayPoster.splice(index, 1)
+    arrayId.splice(index, 1)
+  }
+
+
+  localStorage.setItem('title', JSON.stringify(arrayTitle))
+  localStorage.setItem('poster', JSON.stringify(arrayPoster))
+  localStorage.setItem('id', JSON.stringify(arrayId))
+
+  location.reload()
 }
 
 console.log(arrayTitle)
