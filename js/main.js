@@ -207,11 +207,11 @@ for (let b = 0; b < arrayPoster.length; b++) {
   if (myWatchlist) {
     myWatchlist.appendChild(maindivs)
   }
-  maindivs.appendChild(divTitle)
   maindivs.appendChild(divPoster)
+  maindivs.appendChild(divTitle)
   divTitle.appendChild(watchlistTitles)
   divPoster.appendChild(watchlistPoster)
-  divPoster.appendChild(removeButton)
+  divTitle.appendChild(removeButton)
 }
 
 const removebtn = document.querySelectorAll('.removeFromWatchlist')
