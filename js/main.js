@@ -62,7 +62,12 @@ function getFetch(){
 
           title.textContent = data.description[i]['#TITLE']
           h3.textContent = data.description[i]['#YEAR']
-          img.src = data.description[i]['#IMG_POSTER']
+          
+          if (!data.description[i]['#IMG_POSTER']) {
+            img.src = 'images/noPoster.png'
+          } else {
+            img.src = data.description[i]['#IMG_POSTER']
+          }
 
           button.textContent = 'Add to Watchlist'
           remove.textContent = 'Remove From Watchlist'
@@ -110,7 +115,7 @@ function getFetch(){
             if (data.description[value]['#IMG_POSTER']) {
               storePoster.push(data.description[value]['#IMG_POSTER'])
             } else {
-              storePoster.push(0)
+              storePoster.push('images/noPoster.png')
             }
             localStorage.setItem('poster', JSON.stringify(storePoster))
 
