@@ -10,10 +10,16 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+nav {
+  height: 50px;
+  padding-left: 44%;
+  padding-top: 1%;
+}
+
 .search {
   height: 250px;
   padding-left: 32%;
-  padding-top: 3%;
+  padding-top: 2%;
 }
 
 .result {
@@ -97,4 +103,8 @@ myWatchlist ADDITIONAL STYLES
 ************************************/
 .display {
   display: none;
+}
+
+.my {
+  text-align: center;
 }
