@@ -201,7 +201,7 @@ for (let b = 0; b < arrayPoster.length; b++) {
   removeButton.value = `${b}`
 
   watchlistTitles.textContent = arrayTitle[b]
-  removeButton.textContent = 'Remove From Watchlist'
+  removeButton.textContent = 'X'
 
   const myWatchlist = document.querySelector('.myWatchlist')
   if (myWatchlist) {
