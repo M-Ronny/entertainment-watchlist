@@ -45,6 +45,8 @@ function getFetch(){
           const section = document.createElement('section')
           const movieOrTV = document.createElement('div')
           const poster = document.createElement('div')
+          const p = document.createElement('p')
+          const link = document.createElement('a')
 
           title.classList.add('title')
           section.classList.add('minSection')
@@ -59,9 +61,14 @@ function getFetch(){
           remove.value = `${i}`
           //button.value = data.description[i]['#IMDB_ID']
           button.id = data.description[i]['#IMDB_ID']
+          link.classList.add('link')
+          link.href = data.description[i]['#IMDB_URL']
+          link.target = '_blank'
 
           title.textContent = data.description[i]['#TITLE']
           h3.textContent = data.description[i]['#YEAR']
+          p.textContent = 'More on'
+          link.textContent = ' ' + 'IMDb'
           
           if (!data.description[i]['#IMG_POSTER']) {
             img.src = 'images/noPoster.png'
@@ -77,6 +84,8 @@ function getFetch(){
           section.appendChild(poster)
           movieOrTV.appendChild(title)
           movieOrTV.appendChild(h3)
+          movieOrTV.appendChild(p)
+          p.appendChild(link)
           poster.appendChild(img)
           poster.appendChild(button)
           poster.appendChild(remove)

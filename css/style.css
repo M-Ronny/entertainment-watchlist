@@ -12,6 +12,7 @@
 /*******************************************/
 body {
   background-color: #2c3440;
+  color: rgb(69 104 133);
 }
 
 nav {
@@ -90,6 +91,9 @@ input {
   height: 25%;
   font-size: 2em;
   border-radius: 20px;
+  background-color: #2c3440;
+  border: white solid 1px;
+  color: rgb(69 104 133);
 }
 
 button {
@@ -97,6 +101,9 @@ button {
   width: 15%;
   font-size: 2em;
   border-radius: 10px;
+  background: #2c3440;
+  border: solid white 1px;
+  color: rgb(69 104 133);
 }
 
 div {
@@ -115,6 +122,15 @@ div {
 a {
   text-decoration: none;
   color: rgb(114, 146, 174);
+}
+
+.link {
+  color: black;
+  background-color: #f3ce13;
+  padding: 0 5px;
+  border-radius: 3px;
+  margin-left: 5px;
+  font-weight: bold;
 }
 
 /************************************
