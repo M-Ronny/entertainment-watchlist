@@ -48,7 +48,7 @@ function getFetch(){
 
           title.classList.add('title')
           section.classList.add('minSection')
-          movieOrTV.classList.add('moiveOrTV')
+          movieOrTV.classList.add('movieOrTV')
           poster.classList.add('poster')
           button.classList.add('watchlist')
           button.classList.add(`add${i}`)
