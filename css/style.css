@@ -15,9 +15,10 @@ body {
 }
 
 nav {
-  height: 50px;
+  height: 75px;
   padding-left: 44%;
-  padding-top: 1%;
+  padding-top: 25px;
+  background-color: #303947;
 }
 
 .search {
@@ -109,6 +110,11 @@ div {
   width: 30%;
   font-size: 15px;
   margin-top: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(114, 146, 174);
 }
 
 /************************************
