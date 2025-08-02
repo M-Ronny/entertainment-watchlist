@@ -153,3 +153,56 @@ myWatchlist ADDITIONAL STYLES
   height: 55px;
   margin-bottom: 0;
 }
+
+/************************************
+ ADDITIONAL STYLES
+************************************/
+
+/************************************
+myWatchlist ADDITIONAL STYLES
+************************************/
+@media screen and (max-width: 400px){
+  nav {
+    padding-left: 24%;
+  }
+
+  .list {
+    width: 142%;
+  }
+
+  .mylist {
+    width: 35%;
+    margin-left: 20px;
+  }
+
+  .titles {
+    padding: 17px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .posters {
+    width: 70%;
+  }
+
+  .removeFromWatchlist {
+    width: 26%;
+    border-radius: 50%;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 500px) {
+  nav {
+    padding-left: 27%;
+  }
+  
+  .mylist {
+    width: 38%;
+  }
+
+  .titles {
+    padding: 34px;
+    padding-top: 5px;
+  }
+  
+}
