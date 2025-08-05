@@ -161,7 +161,7 @@ myWatchlist ADDITIONAL STYLES
 /************************************
 myWatchlist ADDITIONAL STYLES
 ************************************/
-@media screen and (max-width: 400px){
+@media (min-width: 200px) and (max-width: 400px){
   nav {
     padding-left: 24%;
   }
@@ -205,4 +205,83 @@ myWatchlist ADDITIONAL STYLES
     padding-top: 5px;
   }
   
+}
+
+@media (min-width: 501px) and (max-width: 700px) {
+ nav {
+  padding-left: 32%;
+ }
+
+ .mylist {
+  width: 27%;
+ }
+
+ .titles {
+  padding: 25px;
+  padding-top: 15px;
+  padding-bottom: 0;
+ }
+
+ .posters {
+  width: 70%;
+ }
+
+ .removeFromWatchlist {
+  width: 25%;
+ }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  nav {
+    padding-left: 38%;
+  }
+
+  .mylist {
+    width: 27%;
+    height: 430px;
+  }
+
+  .list {
+    height: 273px;
+  }
+
+  .removeFromWatchlist {
+    margin-top: 4%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1000px) {
+  nav {
+    padding-left: 39%;
+  }
+
+  .mylist {
+    width: 28%;
+    height: 505px;
+  }
+
+  .list {
+    height: 315px;
+  }
+
+  .titles {
+    padding: 62px;
+    padding-top: 15px;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1200px) {
+  nav {
+    padding-left: 41%;
+  }
+
+  .mylist {
+    width: 21%;
+    height: 400px;
+  }
+
+  .list {
+    height: 260px;
+  }
 }
