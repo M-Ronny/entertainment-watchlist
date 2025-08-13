@@ -35,8 +35,6 @@ function getFetch(){
         console.log(data)
         document.querySelector('.result').textContent = ''
         for (let i = 0; i < data.description.length; i++) {
-          document.querySelector('.result').style.height = '2500px'
-
           const title = document.createElement('h1')
           const h3 = document.createElement('h3')
           const img = document.createElement('img')
@@ -59,7 +57,6 @@ function getFetch(){
           remove.classList.add(`btn${i}`)
           button.value = `${i}`
           remove.value = `${i}`
-          //button.value = data.description[i]['#IMDB_ID']
           button.id = data.description[i]['#IMDB_ID']
           link.classList.add('link')
           link.href = data.description[i]['#IMDB_URL']
