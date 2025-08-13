@@ -17,15 +17,14 @@ body {
 
 nav {
   height: 75px;
-  padding-left: 44%;
+  text-align: center;
   padding-top: 25px;
   background-color: #303947;
 }
 
 .search {
   height: 250px;
-  padding-left: 32%;
-  padding-top: 2%;
+  text-align: center;
 }
 
 .result {
@@ -33,7 +32,7 @@ nav {
 }
 
 .minSection {
-  height: 400px;
+  height: 300px;
   margin: 4% 0;
 }
 
@@ -43,7 +42,8 @@ div {
 
 img{
   display: block;
-  width: 29%;
+  width: 27%;
+  height: 205px;
   border-radius: 10px;
 }
 
@@ -73,9 +73,9 @@ myWatchlist layout
 
 .removeFromWatchlist {
   font-size: 15px;
-  width: 22%;
-  border-radius: 48%;
-  margin-top: 2%;
+  width: 23%;
+  border-radius: 50%;
+  margin-top: 5%;
   font-weight: bold;
 }
 
@@ -88,7 +88,7 @@ myWatchlist layout
 }
 
 input {
-  width: 35%;
+  width: 23%;
   height: 25%;
   font-size: 2em;
   border-radius: 20px;
@@ -99,7 +99,7 @@ input {
 
 button {
   height: 25%;
-  width: 15%;
+  width: 10%;
   font-size: 2em;
   border-radius: 10px;
   background: #2c3440;
@@ -115,7 +115,7 @@ div {
 .watchlist {
   display: block;
   height: 25%;
-  width: 30%;
+  width: 28%;
   font-size: 15px;
   margin-top: 2%;
 }
@@ -147,7 +147,7 @@ myWatchlist ADDITIONAL STYLES
 
 .titles {
   font-size: 1em;
-  padding: 35px;
+  padding: 33px;
   padding-bottom: 0;
   padding-top: 15px;
   height: 55px;
@@ -157,14 +157,9 @@ myWatchlist ADDITIONAL STYLES
 /************************************
  media width
 ************************************/
-@media (min-width: 200px) and (max-width: 700px) {
-  .home {
-    padding-left: 35%;
-  }
-
+@media (min-width: 200px) and (max-width: 1000px) {
   .search {
     height: 300px;
-    padding-left: 10%;
   }
 
   .search h1 {
@@ -174,7 +169,6 @@ myWatchlist ADDITIONAL STYLES
   input, button{
     width: 80%;
     height: 15%;
-    margin-left: 5%;
     margin-bottom: 2%;
   }
 
@@ -183,57 +177,49 @@ myWatchlist ADDITIONAL STYLES
   }
 
   .minSection {
-    height: 530px;
+    height: 450px;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   div {
     width: 100%;
+    height: 127px;
     text-align: center;
   }
 
+  .title, h3 {
+    font-size: 1em;
+  }
+
   img {
-    width: 35%;
+    width: 38%;
     margin: auto;
   }
 
   .watchlist {
     margin: auto;
     margin-top: 2%;
-  }
-}
-
-@media (min-width: 390px) and (max-width: 700px) {
-  .minSection {
-    height: 580px;
-    margin-top: 0;
-    margin-bottom: 0;
+    height: 30%;
+    font-size: 14px;
   }
 }
 
 @media (min-width: 500px) and (max-width: 700px) {
-  .home {
-    padding-left: 38%;
+  img {
+    width: 30%;
   }
+}
 
-  .search h1 {
-    margin-left: 5%;
-  }
-
-  .minSection {
-    height: 750px;
+@media (min-width: 600px) and (max-width: 700px) {
+  img, .watchlist {
+    width: 24%;
   }
 }
 
 @media (min-width: 701px) and (max-width: 1000px) {
-  .home {
-    padding-left: 42%;
-  }
-
   .search {
     height: 300px;
-    padding-left: 17%;
   }
 
   .search h1 {
@@ -241,7 +227,7 @@ myWatchlist ADDITIONAL STYLES
   }
 
   input, button{
-    width: 80%;
+    width: 65%;
     height: 15%;
     margin-bottom: 2%;
   }
@@ -251,55 +237,99 @@ myWatchlist ADDITIONAL STYLES
   }
 
   .minSection {
-    height: 1045px;
-    margin-top: 0;
-    margin-bottom: 0;
+    height: 500px;
   }
 
   div {
     width: 100%;
+    height: 190px;
     text-align: center;
   }
 
+  .title {
+    font-size: 2em;
+  }
+
   img {
-    width: 30%;
+    width: 20%;
     margin: auto;
   }
 
   .watchlist {
     margin: auto;
     margin-top: 2%;
+    width: 20%;
+    height: 20%;
   }
 }
 
-@media (min-width: 750px) and (max-width: 1000px) {
-  .minSection {
-    height: 900px;
+@media (min-width: 900px) and (max-width: 1000px) {
+  input, button {
+    width: 55%;
+  }
+
+  img {
+    width: 16%;
+  }
+
+  .watchlist {
+    width: 16%;
   }
 }
 
 
 @media (min-width: 1001px) and (max-width: 1200px) {
-  .home {
-    padding-left: 45%;
-  }
-
-  .search {
-    padding-left: 25%;
-  }
-
   input {
-    width: 50%;
+    width: 40%;
+  }
+
+  img, .watchlist {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+  input {
+    width: 30%;
+  }
+
+  img {
+    width: 33%;
+  }
+
+  .watchlist {
+    width: 33%;
+  }
+}
+
+@media (min-width: 2000px) and (max-width: 3000px) {
+  input {
+    width: 15%;
+  }
+
+  button {
+    width: 5%;
+  }
+
+  .minSection {
+    height: 685px;
+  }
+}
+
+@media (min-width: 2000px) and (max-width: 3000px) {
+  img {
+    width: 30%;
+    height: 400px;
+  }
+
+  .watchlist {
+    width: 30%;
   }
 }
 /************************************
 myWatchlist media width
 ************************************/
-@media (min-width: 200px) and (max-width: 400px){
-  nav {
-    padding-left: 24%;
-  }
-
+@media (min-width: 200px) and (max-width: 1000px){
   .list {
     width: 142%;
   }
@@ -316,106 +346,115 @@ myWatchlist media width
   }
 
   .posters {
-    width: 70%;
+    width: 75%;
   }
 
   .removeFromWatchlist {
-    width: 26%;
-    border-radius: 50%;
+    width: 28%;
+    height: 25%;
+    margin-left: 0;
   }
 }
 
-@media (min-width: 401px) and (max-width: 500px) {
-  nav {
-    padding-left: 27%;
-  }
-  
-  .mylist {
-    width: 38%;
+@media (min-width: 401px) and (max-width: 500px) {  
+  .removeFromWatchlist {
+    width: 25%;
+    height: 25%;
+    margin-top: 0;
+    margin-left: 0;
   }
 
-  .titles {
-    padding: 34px;
-    padding-top: 5px;
+  .posters {
+    width: 70%;
   }
-  
 }
 
-@media (min-width: 501px) and (max-width: 700px) {
- nav {
-  padding-left: 32%;
- }
-
+@media (min-width: 501px) and (max-width: 600px) {
  .mylist {
-  width: 27%;
- }
-
- .titles {
-  padding: 25px;
-  padding-top: 15px;
-  padding-bottom: 0;
- }
-
- .posters {
-  width: 70%;
- }
-
- .removeFromWatchlist {
   width: 25%;
  }
 }
 
-@media (min-width: 701px) and (max-width: 900px) {
-  nav {
-    padding-left: 38%;
-  }
-
+@media (min-width: 601px) and (max-width: 1000px) {
   .mylist {
-    width: 27%;
-    height: 430px;
+    width: 20%;
+    margin-left: 18px;
   }
 
-  .list {
-    height: 273px;
+  .posters {
+    width: 70%;
   }
 
   .removeFromWatchlist {
-    margin-top: 4%;
+    margin-top: 0;
+    width: 25%;
   }
 }
 
-@media (min-width: 901px) and (max-width: 1000px) {
-  nav {
-    padding-left: 39%;
-  }
-
+@media (min-width: 601px) and (max-width: 700px) {
   .mylist {
-    width: 28%;
-    height: 505px;
+    margin-left: 16px;
   }
 
-  .list {
-    height: 315px;
+  .removeFromWatchlist {
+    width: 27%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  .mylist {
+    margin-left: 22px;
   }
 
-  .titles {
-    padding: 62px;
-    padding-top: 15px;
-    padding-bottom: 0;
+  .posters {
+    width: 65%;
   }
+
+  .removeFromWatchlist {
+    width: 22%;
+  } 
 }
 
 @media (min-width: 1001px) and (max-width: 1200px) {
-  nav {
-    padding-left: 41%;
+  .mylist {
+    width: 17%;
+    margin-left: 13px;
   }
 
-  .mylist {
+  .removeFromWatchlist {
     width: 21%;
-    height: 400px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+  .mylist {
+    width: 14%;
+    margin-left: 19px;
+  }
+
+  .removeFromWatchlist {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1400px) {
+  .mylist {
+    width: 12%;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .mylist {
+    height: 550px;
   }
 
   .list {
-    height: 260px;
+    height: 385px;
+  }
+
+  .removeFromWatchlist {
+    width: 18%;
+    height: 17%;
   }
 }
